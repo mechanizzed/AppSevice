@@ -1,6 +1,6 @@
 <?php
 
 
-Route::get('/', function () {
-	return view('welcome');
-});
+//Home
+Route::get('', 'Home\HomeController@index')->name('home');
+
