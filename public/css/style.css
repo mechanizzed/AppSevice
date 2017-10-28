@@ -1,4 +1,35 @@
 body{
 	background-color: #e6e9ed;
-	padding: 20px;
+}
+
+
+.form-control{
+	font-size: 0.8rem;
+}
+header{
+	padding: 0;
+	width: 100%;
+	margin: 0 auto 20px 0;
+	background-color: #ffffff;
+	overflow: hidden;
+	border-bottom: 2px solid #f0f0f0;
+}
+header > ul{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+header > ul > a > li{
+	text-align: center;
+	padding: 30px;
+	font-size: 0.8rem;
+}
+header > ul > a{
+	color: #666 !important;
+	text-decoration: none !important;
+}
+header > ul > a:visited{color: #666 !important;}
+
+.box-card{
+	border-bottom: 3px solid rgba(0,0,0,0.2);
 }

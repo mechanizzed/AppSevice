@@ -2,9 +2,15 @@
 @section('content')
 
 
-<div class="container">
-	<h2>ServiceApp</h2>
-</div>
+<section>
+	<div class="card rounded-0 box-card">
+		<div class="card-body">
+			produtos
+		</div>
+	</div>
+</section>
+
+
 
 
 @endsection
