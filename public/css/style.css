@@ -3,33 +3,60 @@ body{
 }
 
 
-.form-control{
-	font-size: 0.8rem;
+
+.title{
+	font-family: 'Lobster', cursive;
+	color: #FFF;
+	text-shadow: 1px 2px 2px rgba(0,0,0,0.40);
+	letter-spacing: 1px;
 }
+
 header{
+	margin-bottom: 20px;
 	padding: 0;
 	width: 100%;
-	margin: 0 auto 20px 0;
-	background-color: #ffffff;
+	background-color: #68a7b9;
 	overflow: hidden;
-	border-bottom: 2px solid #f0f0f0;
+	border-top: 4px solid #5c96a7;
+	z-index: 99999;
 }
 header > ul{
-	padding: 0;
-	margin: 0;
+	background-color: #5c96a7;
+	padding: 0 !important;
+	margin: 0 !important;
 	list-style-type: none;
 }
 header > ul > a > li{
+	margin: 0;
 	text-align: center;
-	padding: 30px;
-	font-size: 0.8rem;
+	padding: 25px 0 !important;
+	font-size: 0.7rem;
 }
 header > ul > a{
 	color: #666 !important;
 	text-decoration: none !important;
 }
-header > ul > a:visited{color: #666 !important;}
+header > ul > a:visited{color: #fff !important;}
+
+.search{
+	margin: 20px auto;
+}
+.form-control{
+	font-size: 0.8rem;
+}
 
 .box-card{
 	border-bottom: 3px solid rgba(0,0,0,0.2);
 }
+
+
+.box-table-clients{
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+	font-size: 1.2rem;
+	border: 1px solid #f0f0f0;
+}
+
+
+
