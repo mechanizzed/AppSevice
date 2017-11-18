@@ -37,7 +37,7 @@
     </form>
 
     <ul class="row">
-        <a href="{{ route('products.index') }}" class="col"><li><i class="fa fa-th-large" aria-hidden="true"></i> CATEGORIAS</li></a>
+        <a href="{{ route('category.index') }}" class="col"><li><i class="fa fa-th-large" aria-hidden="true"></i> CATEGORIAS</li></a>
         <a href="{{ route('products.index') }}" class="col"><li><i class="fa fa-th-large" aria-hidden="true"></i> PRODUTOS</li></a>
     </ul>
 </header>
@@ -59,6 +59,17 @@
 
 
 <section class="container">
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     @yield('content')
 </section>
 

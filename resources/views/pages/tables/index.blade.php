@@ -2,16 +2,20 @@
 @section('content')
 
 
-<section class="row">
-	@foreach($tables as $table)
-	<div class="col">
-		<div class="card rounded-0">
-			<div class="card-body text-center">
-				{{ $table->number }}
-			</div>
-		</div>
-	</div>
-	@endforeach
+<section>
+	<div class="card p-2">
+		{!! Form::open(['route' => 'table.store']) !!}
+    <div class="form-group">
+      {!! Form::text('table', null, ['class' => 'form-control','placeholder' => 'Digite o número da mesa:', 'required']) !!}
+    </div>
+    <div class="form-group">
+      <button type="submit" class="bnt btn-primary btn-100">Enviar</button>
+    </div>
+    {!! Form::close() !!}
+
+
+    
+  </div>
 </section>
 
 

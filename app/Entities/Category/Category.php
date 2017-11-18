@@ -3,14 +3,14 @@
 namespace AppService\Entities\Category;
 
 use Illuminate\Database\Eloquent\Model;
-use AppService\Entities\Product;
+use AppService\Entities\Product\Product;
 
 class Category extends Model
 {
-	protected $table "agrupo01";
+    protected $table = "agrupro01";
 
-	public function products()
-	{
-		return $this->hasMany(Product::class, 'pro_index');
-	}
+    public function products()
+    {
+    	return $this->hasMany(Product::class, 'pro_id')->orderBy('pro_descr');
+    }
 }

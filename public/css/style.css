@@ -50,13 +50,12 @@ header > ul > a:visited{color: #fff !important;}
 }
 
 
-.box-table-clients{
-	width: 100%;
-	padding: 20px;
-	text-align: center;
-	font-size: 1.2rem;
-	border: 1px solid #f0f0f0;
+.btn-100{
+	width: 100% !important;
 }
 
-
+td.link > a, td.link > a:visited, td.link > a:link{
+	color: #333 !important;
+	text-decoration: none !important;
+}
 

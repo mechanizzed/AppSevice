@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($products as $product)
+        @foreach($category->products as $product)
         <tr>
           <td><small>{{ $product->pro_descr }}</small></td>
           <td><span class="badge badge-primary badge-pill">14</span></td>
