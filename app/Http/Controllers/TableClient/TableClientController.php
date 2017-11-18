@@ -8,20 +8,24 @@ use Illuminate\Support\Facades\Cache;
 
 class TableClientController extends Controller
 {
-	
 
-	public function index()
-	{
-		return view('pages.tables.index');
-	}
 
-	public function store(Request $request)
-	{
-		$this->validate($request, ['table' => 'required|numeric']);
-		Cache::forever('order', $request->get('table'));
-		return redirect()->route('category.index');
+  public function index()
+  {
+    return view('pages.tables.index');
+  }
 
-	}
+  public function store(Request $request)
+  {
+    if (Cache::has('order')) {
+      Cache::forget('order');
+    }
+    $this->validate($request, ['table' => 'required|numeric']);
+    $cache = ['table' => $request->get('table')];
+    Cache::forever('order', $cache);
+    return redirect()->route('category.index');
+
+  }
 
 
 }

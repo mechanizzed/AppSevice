@@ -9,7 +9,7 @@
       {!! Form::text('table', null, ['class' => 'form-control','placeholder' => 'Digite o número da mesa:', 'required']) !!}
     </div>
     <div class="form-group">
-      <button type="submit" class="bnt btn-primary btn-100">Enviar</button>
+      <button type="submit" class="bnt btn-primary btn-100">Continuar</button>
     </div>
     {!! Form::close() !!}
 

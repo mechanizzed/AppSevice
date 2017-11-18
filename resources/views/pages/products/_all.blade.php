@@ -1,4 +1,8 @@
-<li class="list-group-item d-flex justify-content-between align-items-center">
-	<small>{{ $product->pro_descr }}</small>
-	<span class="badge badge-success badge-pill">14</span>
-</li>
+<tr>
+  <td class="link">
+    <a href="{{ route('products.store', ['id' => $product->pro_cod, 'slug' => \Illuminate\Support\Str::slug($product->pro_descr)]) }}">
+      <small>{{ $product->pro_descr }}</small>
+    </a>
+  </td>
+  <td><span class="badge badge-primary badge-pill">14</span></td>
+</tr>
