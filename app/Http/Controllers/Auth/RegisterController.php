@@ -2,7 +2,7 @@
 
 namespace AppService\Http\Controllers\Auth;
 
-use AppService\User;
+use AppService\Entities\User\User;
 use AppService\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/home';
 
     /**
      * Create a new controller instance.
