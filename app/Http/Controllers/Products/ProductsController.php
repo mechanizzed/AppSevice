@@ -5,15 +5,18 @@ namespace AppService\Http\Controllers\Products;
 use Illuminate\Http\Request;
 use AppService\Http\Controllers\Controller;
 use AppService\Entities\Product\Repository as Product;
+use AppService\Entities\Order\OrderItem;
 use Illuminate\Support\Facades\Cache;
 
 class ProductsController extends Controller
 {
 	private $product;
+	private $orderItem;
 
-	public function __construct(Product $product)
+	public function __construct(Product $product, OrderItem $orderItem)
 	{
 		$this->product = $product;
+		$this->orderItem = $orderItem;
 	}
 	
 	public function index()
@@ -22,14 +25,18 @@ class ProductsController extends Controller
 		return view('pages.products.index', compact('products'));
 	}
 
-	public function store($id)
+	public function show($id)
 	{
-		if(Cache::has('order')){
-			$cache = Cache::get('order');
-		}
-		$cache['product'] = $id;
-		Cache::forever('order', $cache);
-		dd(Cache::get('order'));
+		$product = $this->product->find($id);
+		return view('pages.products.show', compact('product'));
+	}
+
+	public function store(Request $request)
+	{
+		$values = $request->except('_token');
+		$values['order_id'] = Cache::get('order_id');
+		$this->orderItem->create($values);
+		return redirect()->route('category.index')->with('success', 'Produto adicionado com sucesso!');
 	}
 
 }

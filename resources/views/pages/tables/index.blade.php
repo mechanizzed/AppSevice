@@ -12,8 +12,6 @@
       <button type="submit" class="bnt btn-primary btn-100">Continuar</button>
     </div>
     {!! Form::close() !!}
-
-
     
   </div>
 </section>

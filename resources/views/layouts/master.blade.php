@@ -17,6 +17,28 @@
 </head>
 <body>
 
+  @if(Session::has('alert'))
+  <div class="msg-alert">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('alert') }}
+  </div>
+  @endif
+
+  @if(Session::has('success'))
+  <div class="msg-success">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('success') }}
+  </div>
+  @endif
+
+  @if ($errors->any())
+  <div class="msg-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
+
 
   <header>
     <div class="row text-center">
@@ -59,17 +81,6 @@
 
 
   <section class="container">
-
-    @if ($errors->any())
-    <div class="alert alert-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
-    @endif
-
     @yield('content')
   </section>
 

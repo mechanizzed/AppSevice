@@ -18,6 +18,11 @@ class Repository
 		return $this->product->orderBy('pro_descr')->get();
 	}
 
+	public function find($id)
+	{
+		return $this->product->find($id);
+	}
+
 
 
 }
