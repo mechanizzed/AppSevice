@@ -33,5 +33,12 @@ Route::prefix('admin')->group(function(){
     });
 
 
+    //Orders
+    Route::prefix('order')->group(function(){
+      Route::get('', 'Order\OrderController@show')->name('order.show');
+      Route::get('checkout', 'Order\OrderController@checkout')->name('order.checkout');
+    });
+
+
   });
 });

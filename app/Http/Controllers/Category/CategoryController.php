@@ -15,7 +15,7 @@ class CategoryController extends Controller
 		$this->category = $category;
 	}
 
-
+	
 
 	public function index()
 	{
@@ -28,5 +28,5 @@ class CategoryController extends Controller
 		$category = $this->category->find($id);
 		return view('pages.categories.show-products',compact('category'));
 	}
-    
+
 }

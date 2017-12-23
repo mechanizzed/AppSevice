@@ -18,7 +18,7 @@ class ProductsController extends Controller
 		$this->product = $product;
 		$this->orderItem = $orderItem;
 	}
-	
+
 	public function index()
 	{
 		$products = $this->product->all();
@@ -33,6 +33,9 @@ class ProductsController extends Controller
 
 	public function store(Request $request)
 	{
+		if(Cache::has('order_id') == null){
+			return redirect()->back()->with('alert', 'Selecione uma mesa');
+		}
 		$values = $request->except('_token');
 		$values['order_id'] = Cache::get('order_id');
 		$this->orderItem->create($values);

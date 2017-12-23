@@ -1,6 +1,8 @@
 @extends('layouts.master')
+@section('menu')
+@include('layouts.menu')
+@endsection
 @section('content')
-
 
 <section>
 	<div class="card p-2">
@@ -12,7 +14,7 @@
       <button type="submit" class="bnt btn-primary btn-100">Continuar</button>
     </div>
     {!! Form::close() !!}
-    
+
   </div>
 </section>
 

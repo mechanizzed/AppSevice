@@ -4,7 +4,7 @@ namespace AppService\Http\Controllers\TableClient;
 
 use AppService\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use AppService\Entities\Order\Order;
+use AppService\Entities\Order\Repository as Order;
 use Illuminate\Support\Facades\Cache;
 
 class TableClientController extends Controller
@@ -29,6 +29,7 @@ class TableClientController extends Controller
       $this->order->destroy($id);
       Cache::forget('order_id');
     }
+  
     $this->validate($request, ['table' => 'required|numeric']);
     $order = $this->order->create(['table' => $request->get('table')]);
     Cache::forever('order_id', $order->id);
