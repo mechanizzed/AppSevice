@@ -4,5 +4,5 @@
       <small>{{ $product->pro_descr }}</small>
     </a>
   </td>
-  <td><span class="badge badge-primary badge-pill">14</span></td>
+  <td><small>R$ {{ $product->pro_venda}}</small></td>
 </tr>

@@ -15,7 +15,10 @@ class Repository
 
 	public function all()
 	{
-		return $this->product->orderBy('pro_descr')->get();
+		return $this->product
+		->where('pro_ad', 'A')
+		->orderBy('pro_descr')
+		->get();
 	}
 
 	public function find($id)

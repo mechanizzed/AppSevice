@@ -22,7 +22,7 @@ class OrderController extends Controller
     $order = $this->order->find(Cache::get('order_id'));
     $items = count($order->items);
     if(Cache::has('order_id') == null || $items == 0 ){
-      return redirect()->back()->with('alert', 'Nenhum produto adicionado');
+      return redirect()->route('products.index')->with('alert', 'Nenhum produto adicionado');
     }
     return view('pages.order.show', compact('order'));
   }
@@ -37,6 +37,15 @@ class OrderController extends Controller
       return redirect()->route('home')->with('success', 'Pedido realizado com sucesso!');
     }
     return redirect()->route('home')->with('alert', 'Ocorreu algum erro');
+  }
+
+
+  public function destroy()
+  {
+    $id = Cache::get('order_id');
+    $this->order->update($id, ['status' => 0]);
+    Cache::forget('order_id');
+    return redirect()->route('home')->with('success', 'Pedido cancelado com sucesso!');
   }
 
 }

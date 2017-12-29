@@ -8,7 +8,7 @@
   <title>AppService</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/v001.css') }}">
 </head>
 <body>
 
@@ -79,9 +79,8 @@
   {{ csrf_field() }}
 </form>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script type="text/javascript" src="{{ asset('js/app.js') }}">
+
+<script type="text/javascript" src="{{ asset('js/v001.js') }}">
 
 </script>
 
@@ -90,14 +89,14 @@
 <script type="text/javascript">
 $(document).ready(function() {
   $('#data').DataTable({
-    fnClearTable: 0,
+    "fnClearTable": 0,
     "bLengthChange": false,
     "bInfo": true,
     "bPaginate": false,
-    iDefaultSortIndex: 0,
+    "iDefaultSortIndex": 0,
     "iDisplayLength": 100,
     "aaSorting": [],
-    responsive: true,
+    "responsive": true,
     language: {
       "sEmptyTable": "Nenhum registro encontrado",
       "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",

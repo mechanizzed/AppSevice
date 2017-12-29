@@ -6,6 +6,7 @@ use AppService\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use AppService\Entities\Order\Repository as Order;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Auth;
 
 class TableClientController extends Controller
 {
@@ -19,19 +20,16 @@ class TableClientController extends Controller
 
   public function index()
   {
+    if(Cache::has('order_id')){
+      return view('pages.order._delete_order');
+    }
     return view('pages.tables.index');
   }
 
   public function store(Request $request)
   {
-    if(Cache::has('order_id')){
-      $id = Cache::get('order_id');
-      $this->order->destroy($id);
-      Cache::forget('order_id');
-    }
-  
     $this->validate($request, ['table' => 'required|numeric']);
-    $order = $this->order->create(['table' => $request->get('table')]);
+    $order = $this->order->create(['table' => $request->get('table'), 'user_id' => Auth::id()]);
     Cache::forever('order_id', $order->id);
     return redirect()->route('category.index');
 

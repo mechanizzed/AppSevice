@@ -2,6 +2,8 @@ body{
   background-color: #e6e9ed;
 }
 
+.dataTables_filter input { width: 100% !important; }
+
 .loader{
   position: absolute;
   z-index: 9999;
@@ -88,9 +90,12 @@ td.link > a, td.link > a:visited, td.link > a:link{
   text-decoration: none !important;
 }
 
+.card{
+  margin-bottom: 60px !important;
+}
 
 .footerTabs{
-  margin-top: 20px;
+  display: block;
   width: 100%;
   padding: 10px;
   background-color: #417686;

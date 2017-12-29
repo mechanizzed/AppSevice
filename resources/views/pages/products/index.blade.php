@@ -9,11 +9,11 @@
 
   <div class="card pt-3">
 
-    <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table id="data" class="table table-striped table-bordered"width="100%">
       <thead class="thead-light">
         <tr>
-          <th>Produto</th>
-          <th>Qtd</th>
+          <th class="col">Produto</th>
+          <th class="col">Preço</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +23,7 @@
       </tbody>
     </table>
 
-    
+
   </div>
 
 </section>
