@@ -21,7 +21,8 @@ class TableClientController extends Controller
   public function index()
   {
     if(Cache::has('order_id')){
-      return view('pages.order._delete_order');
+      $order = $this->order->find(Cache::get('order_id'));
+      return view('pages.order._delete_order', compact('order'));
     }
     return view('pages.tables.index');
   }

@@ -8,7 +8,7 @@
   <title>AppService</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/v001.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/v002.css') }}">
 </head>
 <body>
 
@@ -65,7 +65,9 @@
   <ul class="nav nav-pills nav-fill">
     @if(Cache::has('order_id'))
       <li class="nav-item">
-        <a class="nav-link btn btn-sm btn-info" href="{{ route('order.show') }}"><small><i class="fa fa-pencil" aria-hidden="true"></i> Visualizar pedido</small></a>
+        <a class="nav-link btn btn-sm btn-dark" href="{{ route('order.show') }}">
+          <small>VISUALIZAR PEDIDO</small>
+        </a>
       </li>
     @endif
     <li class="nav-item">
@@ -80,7 +82,7 @@
 </form>
 
 
-<script type="text/javascript" src="{{ asset('js/v001.js') }}">
+<script type="text/javascript" src="{{ asset('js/v002.js') }}">
 
 </script>
 

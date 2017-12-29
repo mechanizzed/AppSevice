@@ -48,6 +48,10 @@ body{
   background-color: rgba(0,115,0,0.9);
 }
 
+.bg-lighter{
+  background-color: #f2f2f2;
+}
+
 .title{
   font-family: 'Lobster', cursive;
   color: #FFF;
@@ -59,16 +63,18 @@ header{
   margin-bottom: 20px;
   padding: 10px;
   width: 100%;
-  background-color: #68a7b9;
+  background-color: #4e545e;
   overflow: hidden;
-  border-top: 4px solid #5c96a7;
+  border-top: 4px solid #464c55;
   z-index: 99999;
 }
 header > ul > li > a{
   font-size: 0.6rem;
   color: white;
 }
-
+.nav-link:visited{
+  color: white;
+}
 .search{
   margin: 20px auto;
 }
@@ -98,7 +104,7 @@ td.link > a, td.link > a:visited, td.link > a:link{
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #417686;
+  background-color: #4e545e;
   position: fixed;
   bottom: 0;
 }

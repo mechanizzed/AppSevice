@@ -20,10 +20,6 @@ class OrderController extends Controller
   public function show()
   {
     $order = $this->order->find(Cache::get('order_id'));
-    $items = count($order->items);
-    if(Cache::has('order_id') == null || $items == 0 ){
-      return redirect()->route('products.index')->with('alert', 'Nenhum produto adicionado');
-    }
     return view('pages.order.show', compact('order'));
   }
 

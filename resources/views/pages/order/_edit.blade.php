@@ -10,12 +10,19 @@
       <div class="modal-body">
         {!! Form::open(['route' => 'itemUpdate', 'method' => 'put']) !!}
 
-        <div class="jumbotron text-center">
+        <div class="p-3 mb-2 bg-lighter text-center">
           <small>Quantidade:</small> <br>
-          <input type="text" name="qtd" id="qtd" value="{{ $item->qtd }}" class="text-center form-control">
-          <input type="button" value="-" onclick="$('#qtd').val(parseInt($('#qtd').val())-1)">
-          <input type="button" value="+" onclick="$('#qtd').val(parseInt($('#qtd').val())+1)">
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-sm btn-secondary" id="qtd_remove"><i class="fa fa-minus-circle" aria-hidden="true"></i></button>
+            </div>
+            <div class="col"><input type="text" id="qtd" value="{{ $item->qtd }}" class="text-center form-control" disabled></div>
+            <div class="col">
+              <button type="button" class="btn btn-sm btn-secondary" id="qtd_add"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+            </div>
+          </div>
         </div>
+
 
         <div class="form-group">
           <small>Observações:</small> <br>
@@ -24,6 +31,7 @@
 
       </div>
       <div class="modal-footer">
+        <input type="hidden" name="qtd" class="qtd" value="{{ $item->qtd }}">
         <input type="hidden" name="id" value="{{ $item->id }}">
         <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
         <button type="submit" class="btn btn-sm btn-primary">Salvar</button>
