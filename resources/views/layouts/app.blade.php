@@ -8,7 +8,7 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
 
   <!-- Styles -->
-  <link href="{{ asset('css/v001.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/v002.css') }}" rel="stylesheet">
 </head>
 <body>
   <div id="app">
@@ -72,6 +72,6 @@
 </div>
 
 <!-- Scripts -->
-<script src="{{ asset('js/v001.js') }}"></script>
+<script src="{{ asset('js/v002.js') }}"></script>
 </body>
 </html>
