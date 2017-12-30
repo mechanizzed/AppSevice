@@ -71,23 +71,20 @@
       </li>
     @endif
     <li class="nav-item">
-      <a class="nav-link" href="{{ route('logout') }}"
-      onclick="event.preventDefault();
-      document.getElementById('logout-form').submit();"><small><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</small></a>
+      <button type="button" data-toggle="modal" data-target="#logout">
+        <small style="color: white"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</small>
+      </button>
     </li>
   </ul>
 </section>
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-  {{ csrf_field() }}
-</form>
+
+@include('layouts.logout')
 
 
-<script type="text/javascript" src="{{ asset('js/v002.js') }}">
 
-</script>
 
+<script type="text/javascript" src="{{ asset('js/v002.js') }}"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/fh-3.1.3/r-2.2.0/datatables.min.js"></script>
-
 <script type="text/javascript">
 $(document).ready(function() {
   $('#data').DataTable({
