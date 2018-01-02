@@ -45,7 +45,7 @@ class ProductsController extends Controller
 		$values = $request->except('_token');
 		$values['order_id'] = Cache::get('order_id');
 		$this->orderItem->create($values);
-		return redirect()->route('category.index')->with('success', 'Produto adicionado com sucesso!');
+		return redirect()->route('products.index')->with('success', 'Produto adicionado com sucesso!');
 	}
 
 
