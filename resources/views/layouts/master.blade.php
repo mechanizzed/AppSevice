@@ -71,9 +71,7 @@
       </li>
     @endif
     <li class="nav-item">
-      <button type="button" data-toggle="modal" data-target="#logout">
-        <small style="color: white"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</small>
-      </button>
+      <small style="color: white; cursor: pointer;" data-toggle="modal" data-target="#logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</small>
     </li>
   </ul>
 </section>

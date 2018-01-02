@@ -8,19 +8,24 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <div class="col">
-            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Não</button>
+        @if (Cache::has('order_id'))
+          <p>Você não pode sair do sitema, existe um pedido em aberto.</p>
+        @else
+          <div class="row">
+            <div class="col">
+              <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Não</button>
+            </div>
+            <div class="col text-right">
+              <a class="btn btn-sm btn-danger" href="{{ route('logout') }}"
+              onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">Sim</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+              </form>
+            </div>
           </div>
-          <div class="col text-right">
-            <a class="btn btn-sm btn-danger" href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">Sim</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              {{ csrf_field() }}
-            </form>
-          </div>
-        </div>
+
+        @endif
       </div>
     </div>
   </div>

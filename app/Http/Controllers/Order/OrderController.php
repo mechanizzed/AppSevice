@@ -27,7 +27,7 @@ class OrderController extends Controller
   {
     $order = $this->order->find(Cache::get('order_id'));
     $items = count($order->items);
-    $values = ['qtd' => $items,'tag' => "P"];
+    $values = ['qtd' => $items,'tag' => "P", 'status' => 3];
     if ($this->order->update($order->id, $values) == true) {
       Cache::forget('order_id');
       return redirect()->route('home')->with('success', 'Pedido realizado com sucesso!');
