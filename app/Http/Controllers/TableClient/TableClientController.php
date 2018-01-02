@@ -37,7 +37,7 @@ class TableClientController extends Controller
     $order = $this->order->create(['table_id' => $request->get('table'), 'user_id' => Auth::id()]);
     Cache::forever('order_id', $order->id);
     Cache::forever('table', $order->table->table);
-    return redirect()->route('category.index');
+    return redirect()->route('products.index');
 
   }
 
