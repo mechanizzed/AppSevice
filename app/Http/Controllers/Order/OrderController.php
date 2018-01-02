@@ -30,6 +30,7 @@ class OrderController extends Controller
     $values = ['qtd' => $items,'tag' => "P", 'status' => 3];
     if ($this->order->update($order->id, $values) == true) {
       Cache::forget('order_id');
+      Cache::forget('table');
       return redirect()->route('home')->with('success', 'Pedido realizado com sucesso!');
     }
     return redirect()->route('home')->with('alert', 'Ocorreu algum erro');
@@ -41,6 +42,7 @@ class OrderController extends Controller
     $id = Cache::get('order_id');
     $this->order->update($id, ['status' => 0]);
     Cache::forget('order_id');
+    Cache::forget('table');
     return redirect()->route('home')->with('success', 'Pedido cancelado com sucesso!');
   }
 

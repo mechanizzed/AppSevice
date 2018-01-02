@@ -36,6 +36,7 @@ class TableClientController extends Controller
     $this->validate($request, ['table' => 'required|numeric']);
     $order = $this->order->create(['table_id' => $request->get('table'), 'user_id' => Auth::id()]);
     Cache::forever('order_id', $order->id);
+    Cache::forever('table', $order->table->table);
     return redirect()->route('category.index');
 
   }

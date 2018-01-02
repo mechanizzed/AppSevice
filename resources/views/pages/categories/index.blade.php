@@ -9,7 +9,6 @@
 
   <div class="card pt-3">
 
-
     <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
         <tr>

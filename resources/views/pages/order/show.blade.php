@@ -36,7 +36,7 @@
                   <small>{{ $item->observations }}</small>
                 </td>
                 <td><small>{{ $item->qtd }}</small></td>
-                <td><small>R$ {{ $item->product->pro_venda }}</small></td>
+                <td><small>R$ {{ number_format($item->product->pro_venda, 2, ',', ' ') }}</small></td>
                 <td>
                   <button type="button" class="btn btn-sm btn-primary mb-2" data-toggle="modal" data-target="#edit_{{ $item->id }}">
                     <i class="fa fa-pencil" aria-hidden="true"></i>

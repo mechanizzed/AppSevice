@@ -17,17 +17,18 @@ $(document).ready(function(){
   $('.msg-alert').fadeOut(2000);
 
   //Add
-  $("#qtd_add").click(function(){
-    $("#qtd").val(parseInt($('#qtd').val()) + 1);
-    $(".qtd").val(parseInt($('.qtd').val()) + 1);
+  $(".qtd_add").click(function(){
+    var id = $(this).attr("data-id");
+    console.log(id);
+    $("#qtd_"+id).val(parseInt($('#qtd_'+id).val()) + 1);
   });
 
   //remove
-  $("#qtd_remove").click(function(){
-    var value = $("#qtd").val();
+  $(".qtd_remove").click(function(){
+    var id = $(this).attr("data-id");
+    var value = $("#qtd_"+id).val();
     if(value >= 2){
-      $("#qtd").val(parseInt($('#qtd').val()) - 1);
-      $(".qtd").val(parseInt($('.qtd').val()) - 1);
+      $("#qtd_"+id).val(parseInt($('#qtd_'+id).val()) - 1);
     }
   });
 

@@ -2,7 +2,7 @@ body{
   background-color: #e6e9ed;
 }
 
-.dataTables_filter input { width: 100% !important; }
+.color-light{color: #9499a4 !important;}
 
 .loader{
   position: absolute;
@@ -61,22 +61,30 @@ body{
 
 header{
   margin-bottom: 20px;
-  padding: 10px;
   width: 100%;
-  background-color: #4e545e;
-  overflow: hidden;
-  border-top: 4px solid #464c55;
+  background-color: #464c55;
   z-index: 99999;
 }
-header > ul > li > a{
+header > div > div > div > div > a{
   font-size: 0.6rem;
+  color: white !important;
+  text-decoration: none !important;
+}
+header > div > div > div > div > a:link,
+header > div > div > div > div > a:visited,
+header > div > div > div > div > a:hover,
+header > div > div > div > div > a:active,{
   color: white;
 }
-.nav-link:visited{
-  color: white;
+.headerTab{
+  font-size: 0.7rem;
+  width: 100%;
+  background-color: #343840;
 }
-.search{
-  margin: 20px auto;
+
+.dataTables_filter input{
+  border: 1px solid #d0d3d5;
+  border-radius: 0;
 }
 .form-control{
   font-size: 0.8rem;

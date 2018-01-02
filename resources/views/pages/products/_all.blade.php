@@ -4,5 +4,5 @@
       <small>{{ $product->pro_descr }}</small>
     </a>
   </td>
-  <td><small>R$ {{ $product->pro_venda}}</small></td>
+  <td><small>R$ {{ number_format($product->pro_venda, 2, ',', ' ') }}</small></td>
 </tr>

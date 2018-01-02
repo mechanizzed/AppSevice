@@ -8,7 +8,8 @@
   <title>AppService</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/v002.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/v003.css') }}">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
 
@@ -62,26 +63,27 @@
 </section>
 
 <section class="footerTabs">
-  <ul class="nav nav-pills nav-fill">
+  <div class="d-flex justify-content-around align-items-center text-uppercase">
     @if(Cache::has('order_id'))
-      <li class="nav-item">
-        <a class="nav-link btn btn-sm btn-dark" href="{{ route('order.show') }}">
+      <div>
+        <a class="btn btn-sm btn-dark" href="{{ route('order.show') }}">
           <small>VISUALIZAR PEDIDO</small>
         </a>
-      </li>
+      </div>
+      <div>
+        <button class="btn btn-sm btn-success">
+          MESA: {{ Cache::get('table') }}
+        </button>
+      </div>
     @endif
-    <li class="nav-item">
-      <small style="color: white; cursor: pointer;" data-toggle="modal" data-target="#logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</small>
-    </li>
-  </ul>
+  </div>
 </section>
 
-@include('layouts.logout')
 
 
 
 
-<script type="text/javascript" src="{{ asset('js/v002.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/v003.js') }}"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/fh-3.1.3/r-2.2.0/datatables.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -105,7 +107,7 @@ $(document).ready(function() {
       "sLoadingRecords": "Carregando...",
       "sProcessing": "Processando...",
       "sZeroRecords": "Nenhum registro encontrado",
-      "sSearch": "Pesquisar",
+      "sSearch": "Pesquisar: ",
       "oPaginate": {
         "sNext": "Próximo",
         "sPrevious": "Anterior",
