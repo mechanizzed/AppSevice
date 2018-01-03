@@ -8,7 +8,7 @@
   <title>AppService</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/v003.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/v004.css') }}">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
@@ -83,7 +83,7 @@
 
 
 
-<script type="text/javascript" src="{{ asset('js/v003.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/v004.js') }}"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/fh-3.1.3/r-2.2.0/datatables.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {

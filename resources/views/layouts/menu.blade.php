@@ -1,4 +1,4 @@
-<div class="headerTab p-1">
+<div class="headerTab p-2">
   <div class="container">
     <div class="d-flex justify-content-start align-items-center text-uppercase">
       <div class="ml-1">

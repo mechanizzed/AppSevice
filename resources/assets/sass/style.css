@@ -81,6 +81,9 @@ header > div > div > div > div > a:active,{
   width: 100%;
   background-color: #343840;
 }
+.headerTab > div > div > div > small{
+  font-size: 0.6rem;
+}
 
 .dataTables_filter input{
   border: 1px solid #d0d3d5;
