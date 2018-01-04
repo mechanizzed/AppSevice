@@ -17,7 +17,7 @@ class Repository
 
   public function lists()
   {
-    return $this->table->orderBy('table', 'ASC')->pluck('table', 'id');
+    return $this->table->orderBy('table', 'ASC')->pluck('table', 'table');
   }
 
 }

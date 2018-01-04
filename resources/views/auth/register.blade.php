@@ -10,11 +10,25 @@
             <form class="form-horizontal" method="POST" action="{{ route('register') }}">
               {{ csrf_field() }}
 
+              <div class="form-group{{ $errors->has('codfunci') ? ' has-error' : '' }}">
+                <label for="codfunci" class="col-md-4 control-label">Código do sistema</label>
+
+                <div class="col-md-6">
+                  <input id="codfunci" type="text" class="form-control number" name="codfunci" value="{{ old('codfunci') }}" required autofocus>
+
+                  @if ($errors->has('codfunci'))
+                    <span class="help-block">
+                      <strong>{{ $errors->first('codfunci') }}</strong>
+                    </span>
+                  @endif
+                </div>
+              </div>
+
               <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                 <label for="name" class="col-md-4 control-label">Nome</label>
 
                 <div class="col-md-6">
-                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                  <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required>
 
                   @if ($errors->has('name'))
                     <span class="help-block">

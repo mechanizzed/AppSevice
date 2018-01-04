@@ -11,7 +11,7 @@
         <p class="font-weight-bold text-center text-primary">Resumo do pedido:</p>
         <div class="row">
           <div class="col text-center">
-            <button type="button" class="btn btn-sm btn-primary">Mesa: {{ $order->table->table}}</button>
+            <button type="button" class="btn btn-sm btn-primary">Mesa: {{ $order->table}}</button>
           </div>
           <div class="col text-center">
             <a href="{{ route('order.checkout') }}" class="btn btn-sm btn-success">Finalizar pedido</a>
@@ -55,8 +55,6 @@
         <p class="font-weight-bold text-center text-primary">Resumo do pedido:</p>
         <p class="text-center">Nenhum produto adicionado</p>
       @endif
-
-
 
 
     </div>

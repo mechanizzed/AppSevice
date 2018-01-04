@@ -38,13 +38,18 @@ Route::prefix('admin')->group(function(){
       Route::get('', 'Order\OrderController@show')->name('order.show');
       Route::get('checkout', 'Order\OrderController@checkout')->name('order.checkout');
       Route::get('destroy', 'Order\OrderController@destroy')->name('order.destroy');
-
       //OrderItem
       Route::prefix('item')->group(function(){
         Route::put('update', 'Order\OrderItemController@update')->name('itemUpdate');
         Route::get('destroy/{id}', 'Order\OrderItemController@destroy')->name('itemDestroy');
       });
+    });
 
+    //Users
+    Route::prefix('user')->group(function(){
+
+      Route::get('password/show', 'User\UserController@index')->name('user.pass.index');
+      Route::put('password/update', 'User\UserController@updatePassword')->name('user.pass.update');
     });
 
 

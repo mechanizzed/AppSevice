@@ -34,9 +34,9 @@ class TableClientController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, ['table' => 'required|numeric']);
-    $order = $this->order->create(['table_id' => $request->get('table'), 'user_id' => Auth::id()]);
+    $order = $this->order->create(['table' => $request->get('table'), 'user_id' => Auth::id(), 'codfunci' => Auth::user()->codfunci]);
     Cache::forever('order_id', $order->id);
-    Cache::forever('table', $order->table->table);
+    Cache::forever('table', $order->table);
     return redirect()->route('products.index');
 
   }

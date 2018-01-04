@@ -1,14 +1,15 @@
 <div class="headerTab p-2">
   <div class="container">
-    <div class="d-flex justify-content-start align-items-center text-uppercase">
-      <div class="ml-1">
+    <div class="d-flex justify-content-between align-items-center text-uppercase">
         <small class="color-light">
           <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
+        </small>
+        <small>
+          <a href="{{ route('user.pass.index')}}" class="color-light"><i class="fa fa-lock" aria-hidden="true"></i> Altear senha</a>
         </small>
         <small class="color-light" style="cursor: pointer;" data-toggle="modal" data-target="#logout">
           (<i class="fa fa-sign-out" aria-hidden="true"></i> Sair )
         </small>
-      </div>
     </div>
   </div>
 </div>
