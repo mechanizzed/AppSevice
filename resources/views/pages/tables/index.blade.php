@@ -9,7 +9,7 @@
 			{!! Form::open(['route' => 'table.store']) !!}
 			<div class="form-group">
 				<h5 class="font-weight-bold text-center mb-3">Selecione o número da mesa</h5>
-				{!! Form::select('table', $tables, null, ['class' => 'form-control', 'required']) !!}
+				{!! Form::select('table', $tables, null, ['class' => 'form-control', 'placeholder' => 'Clique aqui para selecionar uma mesa', 'required']) !!}
 			</div>
 			<div class="form-group">
 				<button type="submit" class="bnt btn-primary btn-100">Continuar</button>
