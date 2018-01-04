@@ -1,18 +1,38 @@
-<div class="headerTab p-2">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center text-uppercase">
-        <small class="color-light">
-          <i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
+<nav class="navbar navbar-dark bg-dark">
+  <small class="color-light ml-2"><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}</small>
+  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#headerUser" aria-controls="headerUser" aria-expanded="false" aria-label="Toggle navigation" style="font-size: 0.7rem;">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" id="headerUser" style="">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item text-right">
+        <a class="nav-link" href="{{ route('user.pass.index') }}"><small><i class="fa fa-lock" aria-hidden="true"></i> Alterar senha</small></a>
+        <small class="nav-link" style="cursor: pointer;" data-toggle="modal" data-target="#logout">
+          <i class="fa fa-sign-out" aria-hidden="true"></i> Sair do sistema
         </small>
-        <small>
-          <a href="{{ route('user.pass.index')}}" class="color-light"><i class="fa fa-lock" aria-hidden="true"></i> Altear senha</a>
-        </small>
-        <small class="color-light" style="cursor: pointer;" data-toggle="modal" data-target="#logout">
-          (<i class="fa fa-sign-out" aria-hidden="true"></i> Sair )
-        </small>
-    </div>
+      </li>
+    </ul>
   </div>
+</nav>
+
+
+
+{{-- <div class="headerTab p-2">
+<div class="container">
+<div class="d-flex justify-content-between align-items-center text-uppercase">
+<small class="color-light">
+<i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->name }}
+</small>
+<small>
+<a href="{{ route('user.pass.index')}}" class="color-light"><i class="fa fa-lock" aria-hidden="true"></i> Altear senha</a>
+</small>
+<small class="color-light" style="cursor: pointer;" data-toggle="modal" data-target="#logout">
+(<i class="fa fa-sign-out" aria-hidden="true"></i> Sair )
+</small>
 </div>
+</div>
+</div> --}}
 
 <div class="p-2">
   <div class="container">
