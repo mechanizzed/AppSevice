@@ -64,7 +64,7 @@
 
 <section class="footerTabs">
   <div class="d-flex justify-content-around align-items-center text-uppercase">
-    @if(Cache::has('order_id'))
+    @if(session()->exists('order_id'))
       <div>
         <a class="btn btn-sm btn-dark" href="{{ route('order.show') }}">
           <small>VISUALIZAR PEDIDO</small>
@@ -72,7 +72,7 @@
       </div>
       <div>
         <button class="btn btn-sm btn-success">
-          MESA: {{ Cache::get('table') }}
+          MESA: {{ session()->get('table') }}
         </button>
       </div>
     @endif

@@ -35,9 +35,9 @@ class LoginController extends Controller
   */
   public function __construct()
   {
-    if(Cache::has('order_id')){
-      Cache::forget('order_id');
-    }
+    // if(Cache::has('order_id')){
+    //   Cache::forget('order_id');
+    // }
     $this->middleware('guest')->except('logout');
   }
 }

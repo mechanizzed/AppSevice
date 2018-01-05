@@ -9,7 +9,7 @@
     <div class="card p-3">
 
 
-      <p class="font-weight-bold">{{ $product->pro_descr }}</p>
+      <p class="font-weight-bold text-center text-info">{{ $product->pro_descr }}</p>
 
 
       {!! Form::model( $product, ['route' => 'products.store', 'method' => 'post']) !!}

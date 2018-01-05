@@ -8,7 +8,7 @@
         </button>
       </div>
       <div class="modal-body">
-        @if (Cache::has('order_id'))
+        @if (session()->get('order_id'))
           <p>Você não pode sair do sitema, existe um pedido em aberto.</p>
         @else
           <div class="row">

@@ -15,9 +15,27 @@ class Repository
     return $this->table->orderBy('table', 'ASC')->get();
   }
 
+  public function findTable($table)
+  {
+    return $this->table->where('table', $table)->firstOrFail();
+  }
+
   public function lists()
   {
-    return $this->table->orderBy('table', 'ASC')->pluck('table', 'table');
+    return $this->table
+    ->where('status', 0)
+    ->orderBy('table', 'ASC')
+    ->pluck('table', 'table');
+  }
+
+  public function update($id, $values)
+  {
+    return $this->table->find($id)->update($values);
+  }
+
+  public function whereStatusOnline()
+  {
+    return $this->table->where('status', 1)->get();
   }
 
 }

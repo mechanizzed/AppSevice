@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use AppService\Http\Controllers\Controller;
 use AppService\Entities\Product\Repository as Product;
 use AppService\Entities\Order\OrderItem;
-use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Session;
 
 class ProductsController extends Controller
 {
@@ -33,17 +33,17 @@ class ProductsController extends Controller
 
 	public function store(Request $request)
 	{
-		if(Cache::has('order_id') == null){
+		if(session()->exists('order_id') == null){
 			return redirect()->back()->with('alert', 'Selecione uma mesa');
 		}
-		$check = $this->orderItem->where('order_id', '=', Cache::get('order_id'))->where('product_id', '=', $request->get('product_id'))->first();
+		$check = $this->orderItem->where('order_id', '=', session()->get('order_id'))->where('product_id', '=', $request->get('product_id'))->first();
 		if(count($check) > 0 ){
 			$this->orderItem->find($check->id)->update(['qtd' => $check->qtd + $request->get('qtd')]);
 			return redirect()->route('category.index')->with('success', 'Quantidade do Produto atualizado');
 		}
 
 		$values = $request->except('_token');
-		$values['order_id'] = Cache::get('order_id');
+		$values['order_id'] = session()->get('order_id');
 		$this->orderItem->create($values);
 		return redirect()->route('products.index')->with('success', 'Produto adicionado com sucesso!');
 	}

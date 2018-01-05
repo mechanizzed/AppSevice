@@ -7,7 +7,9 @@
 
 <section>
 
-  <div class="card pt-3">
+  <div class="card p-3">
+
+    <p class="text-info font-weight-bold tex-center">{{ $category->a_descr}}</p>
 
     <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
