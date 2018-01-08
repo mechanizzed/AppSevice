@@ -9,10 +9,12 @@
 
   <div class="card pt-3">
 
-    <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <p class="text-info font-weight-bold text-center">Categorias</p>
+
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
         <tr>
-          <th>Categoria</th>
+          <th>Nome</th>
         </tr>
       </thead>
       <tbody>
