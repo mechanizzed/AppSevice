@@ -23,7 +23,7 @@ class Repository
   public function lists()
   {
     return $this->table
-    ->where('status', 0)
+    //->where('status', 0)
     ->orderBy('table', 'ASC')
     ->pluck('table', 'table');
   }
