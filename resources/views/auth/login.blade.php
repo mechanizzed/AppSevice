@@ -7,6 +7,9 @@
         <div class="card" style="border: 1px solid #cfd5d9;">
 
           <div class="card-body">
+            <h5 class="text-info text-center">
+              {{ config('app.name', 'AppService') }}
+            </h5>
             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
               {{ csrf_field() }}
 
@@ -38,31 +41,39 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <div class="col-md-6 col-md-offset-4">
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Lembrar
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <div class="col-md-8 col-md-offset-4">
-                  <button type="submit" class="btn btn-sm btn-primary">
-                    Login
-                  </button>
-
-                  <!--<a class="btn btn-link" href="{{ route('password.request') }}">
-                  Forgot Your Password?
-                </a>-->
-              </div>
-            </div>
-          </form>
+              {{-- <div class="form-group">
+              <div class="col-md-6 col-md-offset-4">
+              <div class="checkbox">
+              <label>
+              <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Lembrar
+            </label>
+          </div>
         </div>
+      </div> --}}
+
+      <div class="form-group">
+        <div class="col-md-8 col-md-offset-4">
+          <button type="submit" class="btn btn-sm btn-primary">
+            Login
+          </button>
+          <!--<a class="btn btn-link" href="{{ route('password.request') }}">
+          Forgot Your Password?
+        </a>-->
       </div>
     </div>
+  </form>
+  <hr>
+  <div class="col-lg-12">
+    <small>
+      <a href="{{ route('register') }}" class="color-light">
+        <i class="fa fa-user-plus" aria-hidden="true"></i> Registrar novo usuário no sistema
+      </a>
+    </small>
   </div>
+
+</div>
+</div>
+</div>
+</div>
 </div>
 @endsection
