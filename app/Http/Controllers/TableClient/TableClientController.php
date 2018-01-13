@@ -46,7 +46,7 @@ class TableClientController extends Controller
 
     session(['order_id' => $order->id]);
     session(['table' => $order->table]);
-    return redirect()->route('products.index');
+    return redirect()->route('category.index');
 
   }
 

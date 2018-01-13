@@ -5,30 +5,30 @@
 @section('content')
 
 
-  <section>
+<section>
 
-    <div class="card pt-3">
+  <div class="card pt-3">
 
-      <p class="text-info font-weight-bold text-center">Produtos</p>
+    <p class="text-info font-weight-bold text-center">Produtos</p>
 
-      <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead class="thead-light">
-          <tr>
-            <th class="col">Nome</th>
-            <th class="col">Preço</th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach($products as $product)
-            @include('pages.products._all')
-          @endforeach
-        </tbody>
-      </table>
+    <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <thead class="thead-light">
+        <tr>
+          <th class="col">&nbsp;</th>
+          <th class="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($products as $product)
+          @include('pages.products._all')
+        @endforeach
+      </tbody>
+    </table>
 
 
-    </div>
+  </div>
 
-  </section>
+</section>
 
 
 

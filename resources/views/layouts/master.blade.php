@@ -8,7 +8,7 @@
   <title>AppService</title>
 
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/v004.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/v005.css') }}">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
@@ -16,25 +16,25 @@
   <div class="loader"></div>
 
   @if(Session::has('alert'))
-    <div class="msg-alert">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('alert') }}
-    </div>
+  <div class="msg-alert">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('alert') }}
+  </div>
   @endif
 
   @if(Session::has('success'))
-    <div class="msg-success">
-      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('success') }}
-    </div>
+  <div class="msg-success">
+    <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> {{ Session::get('success') }}
+  </div>
   @endif
 
   @if ($errors->any())
-    <div class="msg-danger">
-      <ul>
-        @foreach ($errors->all() as $error)
-          <li>{{ $error }}</li>
-        @endforeach
-      </ul>
-    </div>
+  <div class="msg-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
   @endif
 
 
@@ -65,16 +65,16 @@
 <section class="footerTabs">
   <div class="d-flex justify-content-around align-items-center text-uppercase">
     @if(session()->exists('order_id'))
-      <div>
-        <a class="btn btn-sm btn-dark" href="{{ route('order.show') }}">
-          <small>VISUALIZAR PEDIDO</small>
-        </a>
-      </div>
-      <div>
-        <button class="btn btn-sm btn-success">
-          MESA: {{ session()->get('table') }}
-        </button>
-      </div>
+    <div>
+      <a class="btn btn-sm btn-dark" href="{{ route('order.show') }}">
+        <small>VISUALIZAR PEDIDO</small>
+      </a>
+    </div>
+    <div>
+      <button class="btn btn-sm btn-success">
+        MESA: {{ session()->get('table') }}
+      </button>
+    </div>
     @endif
   </div>
 </section>
@@ -83,44 +83,45 @@
 
 
 
-<script type="text/javascript" src="{{ asset('js/v004.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/v005.js') }}"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.16/af-2.2.2/b-1.4.2/b-colvis-1.4.2/fh-3.1.3/r-2.2.0/datatables.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-  $('#data').DataTable({
-    "fnClearTable": 0,
-    "bLengthChange": false,
-    "bInfo": true,
-    "bPaginate": false,
-    "iDefaultSortIndex": 0,
-    "iDisplayLength": 100,
-    "aaSorting": [],
-    "responsive": true,
-    language: {
-      "sEmptyTable": "Nenhum registro encontrado",
-      "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
-      "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
-      "sInfoFiltered": "(Filtrados de _MAX_ registros)",
-      "sInfoPostFix": "",
-      "sInfoThousands": ".",
-      "sLengthMenu": "_MENU_ resultados por página",
-      "sLoadingRecords": "Carregando...",
-      "sProcessing": "Processando...",
-      "sZeroRecords": "Nenhum registro encontrado",
-      "sSearch": "Pesquisar: ",
-      "oPaginate": {
-        "sNext": "Próximo",
-        "sPrevious": "Anterior",
-        "sFirst": "Primeiro",
-        "sLast": "Último"
-      },
-      "oAria": {
-        "sSortAscending": ": Ordenar colunas de forma ascendente",
-        "sSortDescending": ": Ordenar colunas de forma descendente"
+  $(document).ready(function() {
+    $('#data').DataTable({
+      "fnClearTable": 0,
+      "bLengthChange": false,
+      "bInfo": true,
+      "bPaginate": false,
+      "iDefaultSortIndex": 0,
+      "iDisplayLength": 100,
+      "aaSorting": [],
+      "responsive": true,
+      language: {
+        "sEmptyTable": "Nenhum registro encontrado",
+        "sInfo": "Mostrando de _START_ até _END_ de _TOTAL_ registros",
+        "sInfoEmpty": "Mostrando 0 até 0 de 0 registros",
+        "sInfoFiltered": "(Filtrados de _MAX_ registros)",
+        "sInfoPostFix": "",
+        "sInfoThousands": ".",
+        "sLengthMenu": "_MENU_ resultados por página",
+        "sLoadingRecords": "Carregando...",
+        "sProcessing": "Processando...",
+        "sZeroRecords": "Nenhum registro encontrado",
+        "sSearch": "",
+        "searchPlaceholder": "Pesquisar produtos",
+        "oPaginate": {
+          "sNext": "Próximo",
+          "sPrevious": "Anterior",
+          "sFirst": "Primeiro",
+          "sLast": "Último"
+        },
+        "oAria": {
+          "sSortAscending": ": Ordenar colunas de forma ascendente",
+          "sSortDescending": ": Ordenar colunas de forma descendente"
+        }
       }
-    }
-  });
-} );
+    });
+  } );
 </script>
 
 </body>

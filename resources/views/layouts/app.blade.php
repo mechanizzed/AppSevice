@@ -10,7 +10,7 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
 
   <!-- Styles -->
-  <link href="{{ asset('css/v004.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/v005.css') }}" rel="stylesheet">
 </head>
 <body>
   <div id="app" class="pt-4">
@@ -18,6 +18,6 @@
   </div>
 
   <!-- Scripts -->
-  <script src="{{ asset('js/v004.js') }}"></script>
+  <script src="{{ asset('js/v005.js') }}"></script>
 </body>
 </html>

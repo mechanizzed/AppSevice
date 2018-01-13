@@ -13,9 +13,9 @@
 
     <table class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
-        <tr>
+        {{-- <tr>
           <th>Nome</th>
-        </tr>
+        </tr> --}}
       </thead>
       <tbody>
         @foreach($categories as $category)

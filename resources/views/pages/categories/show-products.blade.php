@@ -11,12 +11,12 @@
 
     <p class="text-info font-weight-bold text-center">{{ $category->a_descr}}</p>
 
-    <table id="data" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
-        <tr>
+        {{-- <tr>
           <th class="col">Produto</th>
           <th class="col">Preço</th>
-        </tr>
+        </tr> --}}
       </thead>
       <tbody>
         @foreach($category->products as $product)
