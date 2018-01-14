@@ -9,13 +9,13 @@
 
   <div class="card pt-3">
 
-    <p class="text-info font-weight-bold text-center">Categorias</p>
+    <!--<p class="text-info font-weight-bold text-center">Categorias</p>-->
 
     <table class="table table-striped table-bordered" cellspacing="0" width="100%">
       <thead class="thead-light">
-        {{-- <tr>
-          <th>Nome</th>
-        </tr> --}}
+        <tr>
+          <th>Categoria</th>
+        </tr>
       </thead>
       <tbody>
         @foreach($categories as $category)
